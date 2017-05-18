@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i')
+
+/*-----------------------------------
+	Variables
+/*-----------------------------------
+$main-font: 'Raleway', sans-serif
+$main-color: #37b6b3
+$sec-color: #2b243e
+
+/*-----------------------------------
+	Default
+/*-----------------------------------
+
+html
+	font-size: 62.5%
+
+body
+	margin: 0
+	padding: 0
+	font-family: $main-font
+	background-color: #1a1427
+	*
+		box-sizing: border-box
+
+.site-container
+	display: block
+	width: 100%
+	padding: 0 20px
+
+/*-----------------------------------
+	Header
+/*-----------------------------------
+
+#header
+	display: inline-block
+	vertical-align: top
+	width: 100%
+	padding: 0
+	background-color: $sec-color
+	.site-container
+		padding-top: 20px
+		padding-bottom: 20px
+	@media screen and (max-width: 768px)
+		position: relative
+		z-index: 10
+		.site-container
+			padding-top: 15px
+			padding-bottom: 15px
+			text-align: center
+			background-color: $sec-color
+
+#logo
+	display: inline-block
+	vertical-align: top
+	img
+		width: 200px
+	@media screen and (max-width: 768px)
+		img
+			width: 150px
+
+#filter
+	float: right
+	margin: 12px 0 0 0
+	font-size: 1.8rem
+	color: $main-color
+	text-transform: uppercase
+
+	//Drop click
+	.drop-click
+		display: none
+		vertical-align: top
+		width: 35px
+		height: 27px
+		margin: 0
+		cursor: pointer
+		background: transparent url(../img/menu_teste.svg) no-repeat center center
+
+	p, a
+		display: inline-block
+		vertical-align: top
+		margin: 0 30px 0 0
+		&:last-child
+			margin-right: 0
+	a
+		padding-bottom: 5px
+		cursor: pointer
+		&.active
+			color: #fff
+			border-bottom: 2px solid $main-color
+	@media screen and (max-width: 768px)
+		position: absolute
+		top: 7px
+		left: 15px
+		.drop-click
+			display: inline-block
+			&.active
+				background-image: url(../img/close_teste.svg)
+		.drop-content
+			position: fixed
+			top: 0
+			left: 0
+			transform: translateY(-100%)
+			width: 100%
+			height: 100%
+			padding: 65px 0 0 0
+			text-align: left
+			background: #1a1426
+			transition: all 0.3s
+			z-index: -1
+			&.active
+				transform: translateY(0%)
+
+			p, a
+				display: block
+				margin: 0
+				padding: 15px 15px
+			.title
+				padding-top: 20px
+				padding-bottom: 20px
+				font-size: 1.5rem
+				background-color: #161120
+			a
+				border-bottom: 1px solid #302a40
+				border-left: 4px solid transparent
+				&.active
+					border-left-color: $main-color
+
+/*-----------------------------------
+	Content
+/*-----------------------------------
+
+#content
+	width: 100%
+	margin: 10px 0 0 0
+	.row
+		margin: 0 -10px
+	.box-item
+		display: inline-block
+		vertical-align: top
+		width: 33.333%
+		margin: 0
+		padding: 10px
+		.inner
+			display: inline-block
+			vertical-align: top
+			width: 100%
+			padding: 0 0 25px 0
+			border-radius: 10px
+			background-color: $sec-color
+			p
+				display: block
+				margin: 0
+				padding: 0 15px
+				font-weight: 400
+				text-transform: uppercase
+			.p-city
+				padding-top: 10px
+				padding-bottom: 10px
+				color: #807798
+				font-size: 1.6rem
+				font-weight: 600
+				border-bottom: 2px solid #332d45
+			.p-type
+				margin-top: 15px
+				font-size: 3rem
+				color: #fff
+			.p-value
+				font-size: 4.7rem
+				font-weight: 700
+				color: $main-color
+		@media screen and (max-width: 1024px)
+			.inner
+				.p-city
+					font-size: 1.5rem
+				.p-type
+					font-size: 2rem
+				.p-value
+					font-size: 3.7rem
+		@media screen and (max-width: 992px)
+			width: 50%
+		@media screen and (max-width: 600px)
+			width: 100%

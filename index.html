@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="utf-8" />
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+	<title>Teste 1</title>
+	<link href="util/css/style.css" rel="stylesheet" />
+	<script src="util/js/angular.min.js"></script>
+	<script src="util/js/scripts.js"></script>
+</head>
+
+<body ng-app="tApp" ng-controller="con">
+
+<header id="header">
+	<div class="site-container">
+		<div id="logo">
+			<img src="util/img/logo_teste.svg" alt="Logo" />
+		</div>
+		<div id="filter">
+			<div class="drop-click" ng-class="{'active' : class}" ng-click="class=!class"></div>
+			<div class="drop-content" ng-class="{'active' : class}">
+				<p class="title">Ordenar por:</p>
+				<a id="type" ng-class="{'active' : order == 'diligencia_type'}" ng-click="order = 'diligencia_type'">tipo</a>
+				<a id="value" ng-class="{'active' : order == 'value'}" ng-click="order = 'value'">valor</a>
+			</div>
+		</div>
+	</div>
+</header>
+
+<section id="content">
+	<div class="site-container">
+		<div class="row">
+			<div class="box-item" ng-repeat="iData in data | orderBy : order">
+				<div class="inner">
+					<p class="p-city">{{ iData.city }}</p>
+					<p class="p-type">{{ iData.diligencia_type }}</p>
+					<p class="p-value">{{ iData.value }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+</body>
+
+</html>
